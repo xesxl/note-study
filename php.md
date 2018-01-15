@@ -1,70 +1,70 @@
 # PHP笔记
 ## WAMP
-	- apache
-		apache -k install 安装服务
-		apache -k uninstall 卸载服务
-		apache -k start 启动服务
-		apache -k stop 停止服务
-	- 修改httpd.conf文件
-		增加php处理模块
-		LoadMoudle php5_module php中的php5apache2_4.dll路径
-		<FilesMatch \.php$>
-			SetHandler application/x-httpd-php
-		</FilesMatch>
-		PHPiniDir  -> php所在文件路径
-	- 整合 mysql
-		修改php.ini中的extenstion_dir 为正确目录
-		将extension列表中的php_mysql.dll , php_mysqli.dll, php_pdo打开
+- apache
+	apache -k install 安装服务
+	apache -k uninstall 卸载服务
+	apache -k start 启动服务
+	apache -k stop 停止服务
+- 修改httpd.conf文件
+	增加php处理模块
+	LoadMoudle php5_module php中的php5apache2_4.dll路径
+	<FilesMatch \.php$>
+		SetHandler application/x-httpd-php
+	</FilesMatch>
+	PHPiniDir  -> php所在文件路径
+- 整合 mysql
+	修改php.ini中的extenstion_dir 为正确目录
+	将extension列表中的php_mysql.dll , php_mysqli.dll, php_pdo打开
 
 ## 基础
 ## 变量命名规范
-	- php变量面前必须加上$
-	- php变量名字区分大小写，函数名字不区分大小写
-	- php变量名字可以是关键字，不推荐
-	- 可以是驼峰法也可以是下划线法
+- php变量面前必须加上$
+- php变量名字区分大小写，函数名字不区分大小写
+- php变量名字可以是关键字，不推荐
+- 可以是驼峰法也可以是下划线法
 ## 语言特点
 	动态弱数据脚本语言
 
 ### 数据类型
-	- 整数
-		#### 整数可以使用十进制，十六进制 或者八进制
-		- 十进制 10
-		- 十六进制 0x10
-		- 八进制 010
-		#### 整数的字节大小与平台有关通常是4个字节
-		- 可以使用常量PHP_INT_SIZE查看int字节大小
-		- 整数最大值可以使用 PHP_INT_MAX查看
-		**整数超过最大值的范围会自动转成float类型**
-	- 布尔值
-		#### 布尔值的说明
-			0, false, '', '0', null, 空数组, 空标记的smipleXml都为false, 其余为true
-	- 浮点数
-		#### 浮点数的精度
-			浮点数的精度为14位，从左边第一个非0的数字开始计算
-	- 字符串
-		- 单引号
-			单引号不会解析字符串中包含的变量
-		- 双引号
-			会解析字符串中包含的变量，如果变量数据类型复杂则使用{$var['name']}来使用
-		- heredoc
-			一般用于返回大段的html代码
-			会解析包含的变量
-			<<<HTMLCON
-				任意内容
-			HTMLCON;
-		- nowdoc
-			同上，但不解析包含的变量
-			<<< 'HTMLCON'
-			HTMLCON;
-		- 特殊字符的转义 如果需要在字符串中使用转义字符则在字符前面加上\即可
-	- 特殊类型 如 null
-	- 数组
-		- 索引数组
-		- 关联数组
-	- 对象
-	- 资源类型
-		- 文件资源
-		- mysql资源
+- 整数
+	#### 整数可以使用十进制，十六进制 或者八进制
+	- 十进制 10
+	- 十六进制 0x10
+	- 八进制 010
+	#### 整数的字节大小与平台有关通常是4个字节
+	- 可以使用常量PHP_INT_SIZE查看int字节大小
+	- 整数最大值可以使用 PHP_INT_MAX查看
+	**整数超过最大值的范围会自动转成float类型**
+- 布尔值
+	#### 布尔值的说明
+		0, false, '', '0', null, 空数组, 空标记的smipleXml都为false, 其余为true
+- 浮点数
+	#### 浮点数的精度
+		浮点数的精度为14位，从左边第一个非0的数字开始计算
+- 字符串
+	- 单引号
+		单引号不会解析字符串中包含的变量
+	- 双引号
+		会解析字符串中包含的变量，如果变量数据类型复杂则使用{$var['name']}来使用
+	- heredoc
+		一般用于返回大段的html代码
+		会解析包含的变量
+		<<<HTMLCON
+			任意内容
+		HTMLCON;
+	- nowdoc
+		同上，但不解析包含的变量
+		<<< 'HTMLCON'
+		HTMLCON;
+	- 特殊字符的转义 如果需要在字符串中使用转义字符则在字符前面加上\即可
+- 特殊类型 如 null
+- 数组
+	- 索引数组
+	- 关联数组
+- 对象
+- 资源类型
+	- 文件资源
+	- mysql资源
 ### 数据类型的转换
 - 自动转换
 	当不同数据类型的变量进行算术运算时，会向高精度的类型转换
