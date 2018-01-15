@@ -16,7 +16,7 @@
 	- 修改php.ini中的extenstion_dir 为正确目录
 	- 将extension列表中的php_mysql.dll , php_mysqli.dll, php_pdo打开
 
-## 基础
+## 基础21212112
 ## 变量命名规范
 - php变量面前必须加上$
 - php变量名字区分大小写，函数名字不区分大小写
