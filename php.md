@@ -42,21 +42,25 @@
 	- ===
 	- !==
 - 位运算符
-	-&
-	-|
-	-^
-	-~
+	- &
+	- |
+	- ^
+	- ~
+
 ### 流程控制
-	- 单分支
-		- if else
-		- switch case
-	- 多分支
-		- for
-		- while
-		- do while
-	- 跳转到指定代码块
-		- goto lab;
-###函数
+- 单分支
+	- if else
+	- switch case
+- 多分支
+	- for
+	- while
+	- do while
+- 跳转到指定代码块
+	- goto lab;
+
+### 函数
+
+### 数组
 
 
 ## 面向对象
