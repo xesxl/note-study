@@ -1,20 +1,20 @@
 # PHP笔记
 ## WAMP
 - apache
-	apache -k install 安装服务
-	apache -k uninstall 卸载服务
-	apache -k start 启动服务
-	apache -k stop 停止服务
+	- apache -k install 安装服务
+	- apache -k uninstall 卸载服务
+	- apache -k start 启动服务
+	- apache -k stop 停止服务
 - 修改httpd.conf文件
-	增加php处理模块
-	LoadMoudle php5_module php中的php5apache2_4.dll路径
+	-增加php处理模块
+	`LoadMoudle php5_module php中的php5apache2_4.dll路径
 	<FilesMatch \.php$>
 		SetHandler application/x-httpd-php
 	</FilesMatch>
-	PHPiniDir  -> php所在文件路径
+	PHPiniDir  -> php所在文件路径`
 - 整合 mysql
-	修改php.ini中的extenstion_dir 为正确目录
-	将extension列表中的php_mysql.dll , php_mysqli.dll, php_pdo打开
+	- 修改php.ini中的extenstion_dir 为正确目录
+	- 将extension列表中的php_mysql.dll , php_mysqli.dll, php_pdo打开
 
 ## 基础
 ## 变量命名规范
