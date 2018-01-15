@@ -100,14 +100,14 @@
 
 ## 面向对象
 ### 三大特性
--封装
--继承
--多态
+- 封装
+- 继承
+- 多态
 
 ### 访问控制符
--public
--protected
--private
+- public
+- protected
+- private
 
 ### 魔术常量
 - __file__
