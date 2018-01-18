@@ -54,40 +54,82 @@
 - selcet * from table_name;
 - delete from table_name [where];
 ## 多表查询
+	select * from teble_name1, table_name2 where 表的数量-1
 ## 子查询
+	sql语句中的包含的select
 ## order by 子句
-## group by 子句
-## limit 子句
-## where子句
+	排序
+## group by 子句 分组
+	having 过滤
+## limit 子句控制显示数量
+	### limit 1, 20  从1开始到取20条
+## where子句 条件控制
+-like匹配 
+	- % 任意多个字符
+	- _ 任意一个字符
 ## 系统函数
 - 聚合函数
+- sum
+- avg
+- max
+- min
+- count
 - 日期函数
+- now
+- current_date
+- date_sub
+- data_add
+- unix_timestamp
 - 数学函数
+
 ## 内连接
+	inner join
 ## 外连接
 - 左外连接
+	left join
 - 右外连接
+	right join
 ## 约束
 - 主键约束
+	primanry key
 - 唯一约束
+	unique
 - 不可为空约束
+	not null
 - 外键约束
+	foreign key
 - check 约束
+	check
 ## 索引
 - 主键索引
+	primanry key
 - 唯一索引
+	unique
 - 普通索引
+	index
 - 全文索引
+	fulltext
 ## 事务
-- 事务说明	
+- 事务说明
+	将一组dml语句看做一个事务，成功则都成功，失败则都失败	
 - 事务的特性(acid)
+- a 原子性
+- c 统一性
+- i 隔离性
+- d 持久性
 - 事务的隔离级别
-- 默认事务的隔离级别
+- 读未提交
+- 读已提交
+- 可重复读 默认级别
+- 可串行化 
+> 对当前事务操作的表加锁，其他终端在未释放锁之前不可执行dml语句
+- 默认事务的隔离级别 可重复读写
 ## 存储引擎 engine
-- myisam
-- innerdb
-- mermory
+- myisam 表的索引，结构，数据反别存放
+- innerdb 只存表的结构，数据和索引放在ibdata文件中
+- mermory 只存表的结构，数据和索引放在内存中，服务重启则消失
 ## 视图
+	简化sql语句
 ## 数据库用户管理
 - 创建数据库管理用户
 - 分配用户权限
