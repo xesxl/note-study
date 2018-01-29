@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+
+    	<script type="text/javascript">
+    		(function(){
+
+                function showArr(arr){   
+                    let str1 = '';                                   
+                    for(let i = 0; i < arr.length; i++){                 
+                        for(let j = 0; j < arr[i].length; j++){
+                            let val = " " + arr[i][j] + " ";                       
+                            str1 += val;
+                        }                   
+                        str1 += '\n';
+                    }
+                    console.log(str1);
+                }
+
+    		    function init(arr){
+                    for(let i = 0; i < 8; i++){      
+                        let temp = [];           
+                        for(let j = 0; j < 8; j++){
+                            temp.push(0);                      
+                        }                   
+                        arr.push(temp);
+                        temp = [];
+                    }
+                }
+
+                function queen(arr, row, col){                   
+                    for(let i = 0; i < arr.length; i++){
+                        for(let j = 0; j < arr[i].length; j++){
+                             if(i == row && j == col){
+                                console.log(arr[i])
+                                arr[i].splice(col, 1, 1);
+                                if(row -1)
+                                queen(arr, row - 1, col - 2);
+                             }                     
+                        }
+                    }
+                }
+
+                let arr = [];
+                //初始化棋盘
+                init(arr);	
+                //分配皇后位置
+                queen(arr, 7, 7);
+                //显示结果
+                showArr(arr);
+    		})();
+
+            /*
+            0  0  0  0  0  0  1  0  -> 0 6
+            0  0  0  0  1  0  0  0  -> 1 4
+            1  0  1  0  0  0  0  0  -> 2 2
+            0  0  0  0  0  0  0  0  -> 3 0
+            0  1  0  0  0  0  0  0  -> 4 1
+            0  0  0  1  0  0  0  0  -> 5 3
+            0  0  0  0  0  1  0  0  -> 6 5
+            0  0  0  0  0  0  0  1  -> 7 7   */ 
+
+            /*
+            0  0  0  0  0  0  0  0  -> 0 6
+            0  0  0  0  1  0  0  0  -> 1 4
+            0  0  1  0  0  0  0  0  -> 2 2
+            1  0  0  0  0  0  0  0  -> 3 0
+            0  1  0  0  0  0  0  0  -> 4 1
+            0  0  0  1  0  0  0  0  -> 5 3
+            0  0  0  0  0  1  0  0  -> 6 5
+            0  0  0  0  0  0  0  1  -> 7 7   */ 
+    	</script>
+    </body>
+</html>
